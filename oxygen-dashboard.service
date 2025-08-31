@@ -1,0 +1,12 @@
+[Unit]
+Description=Oxygen Analyzer Dashboard
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 -m streamlit run /home/pi/OxygenMonitor/oxygen_web_streamlit.py --server.port 8501 --server.headless true
+WorkingDirectory=/home/pi/OxygenMonitor/
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target

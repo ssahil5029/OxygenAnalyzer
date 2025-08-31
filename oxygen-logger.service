@@ -1,0 +1,12 @@
+[Unit]
+Description=Oxygen Analyzer Logger
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/OxygenMonitor/oxygen_analyzer.py
+WorkingDirectory=/home/pi/OxygenMonitor/
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
